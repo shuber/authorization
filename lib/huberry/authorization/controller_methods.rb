@@ -9,6 +9,8 @@ module Huberry
 					cattr_accessor :unauthorized_message, :unauthorized_redirect_path
 					self.unauthorized_message = 'Unauthorized'
 					self.unauthorized_redirect_path = '/'
+					
+					helper_method :authorized?
 				end
 			end
 			

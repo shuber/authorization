@@ -1,5 +1,5 @@
 Huberry::Authorization
-=======================
+======================
 
 A rails plugin that handles authorization
 
@@ -18,7 +18,7 @@ Coming soon...
 
 Controller Methods
 ------------------
-	
+
 Coming soon...
 
 
