@@ -38,3 +38,24 @@ end
 # Require the main init.rb for the plugin
 #
 require File.join(File.dirname(File.dirname(__FILE__)), 'init')
+
+# Models
+#
+class User < ActiveRecord::Base
+end
+
+class UserWithRights < User
+	uses_authorization
+end
+
+class UserWithoutRights < User
+	uses_authorization :include_rights => false
+end
+
+class Role < ActiveRecord::Base
+	has_and_belongs_to_many :rights
+end
+
+class Right < ActiveRecord::Base
+	has_and_belongs_to_many :roles
+end

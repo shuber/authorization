@@ -17,8 +17,9 @@ module Huberry
 			module ClassMethods
 				def authorize(options = {})
 					before_filter_keys = [:only, :except]
-					before_filter_options = options.delete_if { |key, value| before_filter_keys.include? key }
-				  before_filter(before_filter_options) { |controller| controller.send :authorize, options }
+					authorize_options, before_filter_options = {}, {}
+					options.each { |key, value|	(before_filter_keys.include?(key) ? before_filter_options : authorize_options)[key] = value }
+				  before_filter(before_filter_options) { |controller| controller.send :authorize, authorize_options }
 				end
 			end
 			
@@ -30,8 +31,8 @@ module Huberry
 				
 					def authorized?(options = {})
 						options[:user] ||= :current_user
-						user = options[:user].is_a? Symbol ? send(options[:user]) : options[:user]
-						rights = (options.has_key? :right ? [options[:right]] : options[:rights]) || []
+						user = options[:user].is_a?(Symbol) ? send(options[:user]) : options[:user]
+						rights = (options.has_key?(:right) ? [options[:right]] : options[:rights]) || []
 						role = options[:role]
 						if !user.nil? && user.has_rights?(rights) && user.is_role?(role)
 							block_given? ? yield : true
