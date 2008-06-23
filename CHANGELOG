@@ -1,4 +1,8 @@
 2008-06-22 - Sean Huber (shuber@huberry.com)
+	* authorize methods accept a :user option that defaults to :current_user
+	* Added some empty tests
+
+2008-06-22 - Sean Huber (shuber@huberry.com)
 	* Made authorized? a helper_method
 
 2008-06-22 - Sean Huber (shuber@huberry.com)

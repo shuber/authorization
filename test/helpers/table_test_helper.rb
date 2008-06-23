@@ -54,6 +54,7 @@ module TableTestHelper
     silence_stream(STDOUT) do
       ActiveRecord::Schema.define(:version => 1) do
         create_table :users do |t|
+					t.integer	 :role_id
           t.string   :email
         end
       end

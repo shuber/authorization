@@ -29,9 +29,11 @@ module Huberry
 					end
 				
 					def authorized?(options = {})
+						options[:user] ||= :current_user
+						user = options[:user].is_a? Symbol ? send(options[:user]) : options[:user]
 						rights = (options.has_key? :right ? [options[:right]] : options[:rights]) || []
 						roles = (options.has_key? :role ? [options:role] : options[:roles]) || []
-						if !send(:current_user).nil? && send(:current_user).has_rights?(rights) && send(:current_user).is_roles?(roles)
+						if !user.nil? && user.has_rights?(rights) && user.is_roles?(roles)
 							block_given? ? yield : true
 						else
 							block_given? ? nil : false
