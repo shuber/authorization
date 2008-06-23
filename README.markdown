@@ -38,6 +38,7 @@ Example
 	
 	class UsersController < ApplicationController
 	  # Accepts a combination of :right(s) and :role - also excepts standard before filter options - :only and :except
+	  # (also accepts an option :user which can be set to an object or a symbol representing the method that will return the current user - defaults to :current_user)
 	  authorize :role => :admin, :except => [:index]
 	  authorize :right => :show_user, :only => [:show]
 	  authorize :rights => [:edit_user, :update_user], :only => [:edit, :update]
