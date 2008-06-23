@@ -1,3 +1,6 @@
+2008-06-23 - Sean Huber (shuber@huberry.com)
+	* Added some model logic - incomplete
+
 2008-06-22 - Sean Huber (shuber@huberry.com)
 	* Added rights_users table generating method for tests
 

@@ -32,8 +32,8 @@ module Huberry
 						options[:user] ||= :current_user
 						user = options[:user].is_a? Symbol ? send(options[:user]) : options[:user]
 						rights = (options.has_key? :right ? [options[:right]] : options[:rights]) || []
-						roles = (options.has_key? :role ? [options:role] : options[:roles]) || []
-						if !user.nil? && user.has_rights?(rights) && user.is_roles?(roles)
+						role = options[:role]
+						if !user.nil? && user.has_rights?(rights) && user.is_role?(role)
 							block_given? ? yield : true
 						else
 							block_given? ? nil : false
