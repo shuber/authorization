@@ -3,6 +3,7 @@ module TableTestHelper
 	def create_all_tables
 		create_rights_table
 		create_rights_roles_table
+		create_rights_users_table
 		create_roles_table
 		create_roles_users_table
 		create_users_table
@@ -24,6 +25,17 @@ module TableTestHelper
         create_table :rights_roles, :id => false do |t|
           t.integer	 :right_id
 					t.integer	 :role_id
+        end
+      end
+    end
+  end
+
+	def create_rights_users_table
+    silence_stream(STDOUT) do
+      ActiveRecord::Schema.define(:version => 1) do
+        create_table :rights_users, :id => false do |t|
+          t.integer	 :right_id
+					t.integer	 :user_id
         end
       end
     end

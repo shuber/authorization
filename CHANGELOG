@@ -1,4 +1,7 @@
 2008-06-22 - Sean Huber (shuber@huberry.com)
+	* Added rights_users table generating method for tests
+
+2008-06-22 - Sean Huber (shuber@huberry.com)
 	* authorize methods accept a :user option that defaults to :current_user
 	* Added some empty tests
 
