@@ -29,10 +29,10 @@ require 'action_controller/test_process'
 # Routing
 #
 class ActionController::Routing::RouteSet
-	def append
+  def append
     yield Mapper.new(self)
     install_helpers
-	end
+  end
 end
 
 # Require the main init.rb for the plugin
@@ -45,17 +45,17 @@ class User < ActiveRecord::Base
 end
 
 class UserWithRights < User
-	uses_authorization
+  uses_authorization
 end
 
 class UserWithoutRights < User
-	uses_authorization :include_rights => false
+  uses_authorization :include_rights => false
 end
 
 class Role < ActiveRecord::Base
-	has_and_belongs_to_many :rights
+  has_and_belongs_to_many :rights
 end
 
 class Right < ActiveRecord::Base
-	has_and_belongs_to_many :roles
+  has_and_belongs_to_many :roles
 end
