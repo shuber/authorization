@@ -1,12 +1,14 @@
 authorization
 =============
 
-A rails plugin that handles authorization
+A rails gem/plugin that handles authorization
 
 
 Installation
 ------------
 
+	gem install shuber-authorization --source http://gems.github.com
+	OR
 	script/plugin install git://github.com/shuber/authorization.git
 
 
