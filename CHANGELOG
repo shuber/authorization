@@ -2,6 +2,7 @@
   * Clean up CHANGELOG
   * Remove .gitignore
   * Convert to soft tabs
+  * Remove model logic
 
 2008-06-23 - Sean Huber (shuber@huberry.com)
   * Added some model logic - incomplete
