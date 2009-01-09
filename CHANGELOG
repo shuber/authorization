@@ -1,5 +1,6 @@
 2009-01-08 - Sean Huber (shuber@huberry.com)
   * Clean up CHANGELOG
+  * Remove .gitignore
 
 2008-06-23 - Sean Huber (shuber@huberry.com)
   * Added some model logic - incomplete
