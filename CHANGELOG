@@ -1,30 +1,16 @@
-2008-06-23 - Sean Huber (shuber@huberry.com)
-	* Updated README
+2009-01-08 - Sean Huber (shuber@huberry.com)
+  * Clean up CHANGELOG
 
 2008-06-23 - Sean Huber (shuber@huberry.com)
-	* Updated README
-
-2008-06-23 - Sean Huber (shuber@huberry.com)
-	* Added controller/model logic and tests
-
-2008-06-23 - Sean Huber (shuber@huberry.com)
-	* Added some model logic - incomplete
+  * Added some model logic - incomplete
+  * Added controller/model logic and tests
+  * Updated README
 
 2008-06-22 - Sean Huber (shuber@huberry.com)
-	* Added rights_users table generating method for tests
-
-2008-06-22 - Sean Huber (shuber@huberry.com)
-	* authorize methods accept a :user option that defaults to :current_user
-	* Added some empty tests
-
-2008-06-22 - Sean Huber (shuber@huberry.com)
-	* Made authorized? a helper_method
-
-2008-06-22 - Sean Huber (shuber@huberry.com)
-	* Protected the controller instance methods
-
-2008-06-22 - Sean Huber (shuber@huberry.com)
-	* Added controller logic
-
-2008-06-22 - Sean Huber (shuber@huberry.com)
-	* Initial import
+  * Initial import
+  * Added controller logic
+  * Protected the controller instance methods
+  * Made authorized? a helper_method
+  * Added some empty tests
+  * authorize methods accept a :user option that defaults to :current_user
+  * Added rights_users table generating method for tests
