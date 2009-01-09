@@ -1,8 +1,11 @@
+2009-01-09 - Sean Huber (shuber@huberry.com)
+  * Remove model logic
+  * Update README
+
 2009-01-08 - Sean Huber (shuber@huberry.com)
   * Clean up CHANGELOG
   * Remove .gitignore
   * Convert to soft tabs
-  * Remove model logic
 
 2008-06-23 - Sean Huber (shuber@huberry.com)
   * Added some model logic - incomplete

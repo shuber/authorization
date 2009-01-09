@@ -31,7 +31,7 @@ authorizing. It will be passed a hash of options from the controller and must re
 In the example below, the `:current_user` (customizable - see "Options") is only checked for authorization on the `:destroy`, `:edit`, 
 and `:update` actions. In a before\_filter, the `:current_user`'s `:authorized?` method is called with whatever options that you 
 passed to `authorize`. If the `:authorized?` method returns true, the request goes through like normal, otherwise, the request 
-is redirected to the `unauthorized_redirect_path` (see below) with `unauthorized_message` (see below) as the flash error.
+is redirected with a flash message (customizable - see below).
 
 	class UsersController < ApplicationController
 	  authorize :role => admin, :only => [:destroy, :edit, :update]
@@ -64,7 +64,14 @@ overwrite this method if you'd like to do something different.
 
 ### Options ###
 
-Your controllers have a class method called `authorization_options` which contains a hash with the default authorization options:
+Your controllers have a class method called `authorization_options` which contains a hash with default options. You can change 
+these like so:
+
+	class UsersController < ApplicationController
+	  self.authorization_options.merge!{ :message => 'You are not authorized', :redirect_to => :users_path }
+	end
+
+The default authorization options are:
 
 	# The type of flash message to use when authorization fails. Defaults to :error.
 	:flash_type
